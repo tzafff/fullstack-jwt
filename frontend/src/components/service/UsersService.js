@@ -1,7 +1,7 @@
 import axios from "axios"
 
 class UsersService {
-    static BASE_URL = "http://localhost:8080"
+    static BASE_URL = "https://fullstack-jwt.onrender.com"
 
     static async login(email, password) {
         try {
