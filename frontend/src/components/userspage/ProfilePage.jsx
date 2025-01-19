@@ -1,10 +1,11 @@
-import React, {useEffect, useState} from 'react'
-import UsersService from "../service/UsersService";
-import {Link} from "react-router-dom";
+import React, { useState, useEffect } from 'react';
+import UsersService from '../service/UsersService';
+import { Link } from 'react-router-dom';
+
+
 
 function ProfilePage() {
-
-    const [profileInfo, setProfileInfo] = useState({})
+    const [profileInfo, setProfileInfo] = useState({});
 
     useEffect(() => {
         fetchProfileInfo();
@@ -12,13 +13,14 @@ function ProfilePage() {
 
     const fetchProfileInfo = async () => {
         try {
+
             const token = localStorage.getItem('token'); // Retrieve the token from localStorage
             const response = await UsersService.getYourProfile(token);
             setProfileInfo(response.ourUsers);
         } catch (error) {
             console.error('Error fetching profile information:', error);
         }
-    }
+    };
 
     return (
         <div className="profile-page-container">
@@ -30,7 +32,7 @@ function ProfilePage() {
                 <button><Link to={`/update-user/${profileInfo.id}`}>Update This Profile</Link></button>
             )}
         </div>
-    )
+    );
 }
 
-export default ProfilePage
+export default ProfilePage;
