@@ -1,10 +1,11 @@
 import React from 'react'
-import { Link } from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import UsersService from "../service/UsersService";
 import usersService from "../service/UsersService";
 
 function Navbar() {
 
+    const navigate = useNavigate();
     const isAuthenticated = UsersService.isAuthenticated();
     const isAdmin = UsersService.isAdmin();
 
@@ -12,6 +13,8 @@ function Navbar() {
         const confirmDelete = window.confirm("Are you sure you want to logout?");
         if(confirmDelete) {
             UsersService.logout();
+            navigate("/")
+            window.location.reload();
         }
     };
 

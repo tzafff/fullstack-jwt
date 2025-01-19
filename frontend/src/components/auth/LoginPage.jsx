@@ -19,6 +19,7 @@ function LoginPage() {
                 localStorage.setItem('token', userData.token)
                 localStorage.setItem('role', userData.role)
                 navigate('/profile')
+                window.location.reload();
             } else {
                 setError(userData.error)
             }
