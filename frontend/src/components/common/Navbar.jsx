@@ -18,7 +18,7 @@ function Navbar() {
     return (
         <nav>
             <ul>
-                {!isAuthenticated && <li><Link to="/">Phegon Dev</Link></li>}
+                {!isAuthenticated && <li><Link to="/">CTZAF Dev</Link></li>}
                 {isAuthenticated && <li><Link to="/profile">Profile</Link></li>}
                 {isAdmin && <li><Link to="/admin/user-management">User Management</Link></li>}
                 {isAuthenticated && <li><Link to="/" onClick={handleLogout}>Logout</Link></li>}

@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from "axios"
 
 class UsersService {
     static BASE_URL = "http://localhost:8080"
